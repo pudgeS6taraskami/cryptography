@@ -10,7 +10,7 @@ public class Crypt {
         File file = new File("C:\\Users\\User\\Downloads\\glfw-3.4");
         Cipher encryptcipher = Cipher.getInstance("AES");
         KeyGenerator key = KeyGenerator.getInstance("AES");
-        key.init(128);
+        key.init(128); // как я понял 128 байт
         SecretKey secretKey = key.generateKey();
         encryptcipher.init(Cipher.ENCRYPT_MODE, secretKey);
         byte[] bytes = encryptcipher.doFinal(file.getPath().getBytes());
